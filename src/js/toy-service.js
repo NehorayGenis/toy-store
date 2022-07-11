@@ -40,7 +40,16 @@ function _createToys() {
   let toys = utilService.loadFromStorage(KEY)
 
   if (!toys || !toys.length) {
-    toys = [_createToy("puki"), _createToy("buzz"), _createToy("woody")]
+    toys = [
+      _createToy("puki"),
+     _createToy("buzz"), 
+     _createToy("s"), 
+     _createToy("d"), 
+     _createToy("c"), 
+     _createToy("w"), 
+     _createToy("t"), 
+     _createToy("woody")
+    ]
     localStorage.setItem(KEY, JSON.stringify(toys))
   }
   return toys
@@ -49,7 +58,7 @@ function _createToys() {
 function _createToy(name) {
 
   return {
-    _id: utilService.makeId(),
+    id: utilService.makeId(),
     name,
     price: utilService.getRandomInt(10,200),
     labels: ["Doll", "Battery Powered","Baby"],

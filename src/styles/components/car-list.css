@@ -1,0 +1,10 @@
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.car-list .car-preview .custom-card {
+  align-items: flex-start;
+}
+.car-list .car-preview .custom-card header {
+  font-size: 1em;
+}
