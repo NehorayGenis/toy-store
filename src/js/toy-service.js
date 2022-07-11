@@ -15,14 +15,14 @@ export const toyService = {
 
 function query() {
 
-  return axios.get(`http://localhost:3030/api/toy`).then(res=>{
+  return axios.get(TOY_API).then(res=>{
     return (res.data)
   })
   // return storageService.query(KEY)
 }
 
 function getById(id) {
-  return axios.get(`http://localhost:3030/api/toy/${id}`).then(res=>{
+  return axios.get(TOY_API+id).then(res=>{
     return (res.data)
   })
   return storageService.get(KEY, id)
@@ -37,8 +37,8 @@ function remove(id) {
 }
 
 function save(toy) {
-  if (toy._id) return storageService.put(KEY, toy)
-  return storageService.post(KEY, toy)
+  if (toy._id) return axios.put(TOY_API + toy._id, toy)
+  return axios.post(TOY_API, toy)
 }
 
 function getEmptyToy() {

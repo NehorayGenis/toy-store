@@ -5,7 +5,7 @@ export default {
       toys: null,
       lastRemovedToy: null,
       filterBy: {
-        title: '',
+        name: '',
         isDone: null,
         toSort: false,
         pageIdx: 0,

@@ -2,7 +2,7 @@
   <section class="todo-filter">
       <input @input="filter" type="search"
        v-model="filterBy.name" placeholder="Search by name">
-      <select v-model="filterBy.isDone" @input="filter">
+      <select v-model="filterBy.inStock" @input="filter">
           <option v-for="(opt,i) in valueOptions" :key="i" :value="valueOptions[i]">
             {{userOptions[i]}}</option>
       </select>
@@ -34,12 +34,13 @@ export default {
   },
   methods: {
     filter() {
-      this.$emit('filtered', JSON.parse(JSON.stringify(this.filterBy)))
+      console.log(this.filterBy);
+      this.$emit('setFilter', JSON.parse(JSON.stringify(this.filterBy)))
     },
 
     sort() {
       this.filterBy.toSort = !this.filterBy.toSort
-      this.$emit('filtered', { ...this.filterBy })
+      this.$emit('setFilter', { ...this.filterBy })
     },
   },
 }
