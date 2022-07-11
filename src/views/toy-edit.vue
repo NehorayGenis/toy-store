@@ -10,6 +10,22 @@
         <label for="price" class="form-label">toy price</label>
         <input required v-model.number="toyToEdit.price" id="price" type="number" class="form-input" />
       </div>
+      <div v-for="label in this.toyToEdit.labels">   
+      <h1>{{label}}</h1> 
+      <div class="flex">
+        <label for="labels">Choose a label:</label>
+
+        <select name="labels" id="labels" multiple required>
+          <option value="On wheels">On wheels</option>
+          <option value="Box game">Box game</option>
+          <option value="Art">Art</option>
+          <option value="Baby">Baby</option>
+          <option value="Doll">Doll</option>
+          <option value="Puzzle">Puzzle</option>
+          <option value="Outdoor">Outdoor</option>
+        </select>
+      </div>
+      </div>
       <div class="btn-group">
         <button @click="saveToy" class="btn btn-info">save</button>
         <button @click="goBack" class="btn btn-danger-text">go back</button>

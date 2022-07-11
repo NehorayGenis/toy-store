@@ -28,7 +28,7 @@ export default {
       return this.toys.filter((toy) => regex.test(toy.name))
     },
   },
-  created() {},
+  created() { },
   methods: {
     loadToys() {
       toyService.query().then((toys) => (this.toys = toys))

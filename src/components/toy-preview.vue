@@ -11,7 +11,7 @@
         <div class="btn-group">
           <button @click="goToEdit" class="btn btn-primary">edit</button>
           <button @click="goToDetail" class="btn btn-info">details</button>
-          <button @click="removeToy(toy.id)" class="btn btn-danger">delete</button>
+          <button @click="removeToy(toy._id)" class="btn btn-danger">delete</button>
         </div>
       </template>
     </custom-card>
@@ -31,10 +31,11 @@ export default {
   },
   methods: {
     goToDetail() {
-      this.$router.push(`/toy/${this.toy.id}`)
+      console.log(this.toy);
+      this.$router.push(`/toy/${this.toy._id}`)
     },
     goToEdit() {
-      this.$router.push(`/toy/edit/${this.toy.id}`)
+      this.$router.push(`/toy/edit/${this.toy._id}`)
     },
     removeToy(toyId) {
       this.$emit('removeToy', toyId)

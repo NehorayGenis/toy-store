@@ -11,6 +11,7 @@ export default {
         pageIdx: 0,
       },
       pageSize: 2,
+      modal:false,
     },
     getters: {
       filteredToys({ filterBy, toys, pageSize }) {
@@ -39,14 +40,17 @@ export default {
       toys(state) {
         return state.toys
       },
+      modalStatus(state){
+        return state.modal
+      }
     },
   
     mutations: {
       setToys(state, { toys }) {
         state.toys = toys
       },
-      deleteToy(state, { toyId }) {
-        const idx = state.toys.findIndex((toy) => toy._id === toyId)
+      deleteToy(state, { id }) {
+        const idx = state.toys.findIndex((toy) => toy._id === id)
         state.lastRemovedToy = state.toys[idx]
         state.toys.splice(idx, 1)
       },
@@ -55,7 +59,10 @@ export default {
       },
       updateToy(state, { toy }) {
         const idx = state.toys.findIndex((p) => p._id === toy._id)
-        state.toys.splice(idx, 1, Toy)
+        state.toys.splice(idx, 1, toy)
+      },
+      toggleModal(state){
+        state.modal=!state.modal
       },
       clearRemoveToy(state) {
         state.lastRemovedToy = null
@@ -78,8 +85,8 @@ export default {
         const toy = state.toys.find((toy) => toy._id === toyId)
         toy.isDone = !toy.isDone
       },
-      removeToy(state, { toyId }) {
-        const idx = state.toys.findIndex((toy) => toy._id === toyId)
+      removeToy(state, { id }) {
+        const idx = state.toys.findIndex((toy) => toy._id === id)
         state.toys.splice(idx, 1)
       },
     },
@@ -91,11 +98,11 @@ export default {
         toyService.save(toy)
       },
   
-      removeToy({ commit, state }, { toyId }) {
-        console.log('store:', toyId)
-        commit({ type: 'removeToy', toyId })
-  
-        toyService.remove(toyId).then().catch()
+      removeToy({ commit, state }, { id }) {
+        console.log('store:', id)
+        
+        commit({ type: 'removeToy', id })
+        toyService.remove(id).then().catch()
       },
       loadToys({ commit }) {
         toyService.query().then((toys) => {

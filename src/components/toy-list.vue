@@ -1,6 +1,6 @@
 <template>
   <ul class="Toy-list clean-list grid gap-1">
-    <toy-preview @removeToy="removeToy" v-for="toy in toys" :toy="toy" :key="toy.id" />
+    <toy-preview @removeToy="removeToy" v-for="toy in toys" :toy="toy" :key="toy._id" />
   </ul>
 </template>
 

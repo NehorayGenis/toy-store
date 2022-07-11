@@ -1,9 +1,12 @@
 <template>
   <section v-if="toy" class="car-details flex flex-col items-center gap-2">
     <article>
-      <p><span class="fw-bold">ID:</span> {{ toy.id }}</p>
+      <p><span class="fw-bold">ID:</span> {{ toy._id }}</p>
       <p><span class="fw-bold">name:</span> {{ toy.name }}</p>
       <p><span class="fw-bold">price:</span> {{ toy.price }}</p>
+      <div v-for="review in toy.reviews">
+      <p><span class="fw-bold">reviews:</span> {{ review }}</p>
+      </div>
     </article>
     <button @click="goBack" class="btn btn-primary">go back</button>
   </section>

@@ -1,0 +1,19 @@
+.chat {
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  width: 25vw;
+  height: 25vh;
+  font-size: 2rem;
+  background-color: var(--teal-100);
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  position: fixed;
+  bottom: 7%;
+  right: 7%;
+}
+.chat-button {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+}
