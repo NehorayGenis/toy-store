@@ -36,6 +36,9 @@ export default {
         console.log(filteredToys)
         return filteredToys
       },
+      toys(state) {
+        return state.toys
+      },
     },
   
     mutations: {

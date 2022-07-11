@@ -24,8 +24,8 @@ function remove(id) {
 }
 
 function save(toy) {
-  const savedToy = toy._id ? storageService.put(KEY, toy) : storageService.post(KEY, toy)
-  return savedToy
+  if (toy.id) return storageService.put(KEY, toy)
+  return storageService.post(KEY, toy)
 }
 
 function getEmptyToy() {

@@ -1,4 +1,3 @@
-
 import { createStore } from 'vuex'
 import toyStore from './toy-store.js'
 export const myStore = createStore({

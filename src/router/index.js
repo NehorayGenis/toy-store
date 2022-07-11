@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import about from '../views/aboutView.vue'
-// import carApp from '../views/car-app.vue'
-// import carDetails from '../views/car-details.vue'
-// import carEdit from '../views/car-edit.vue'
+import toyApp from '../views/toy-app.vue'
+import toyDetails from '../views/toy-details.vue'
+import toyEdit from '../views/toy-edit.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,21 +13,21 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
-    // {
-    //   path: '/car',
-    //   name: 'car-app',
-    //   component: carApp,
-    // },
-    // {
-    //   path: '/car/:id',
-    //   name: 'car-details',
-    //   component: carDetails,
-    // },
-    // {
-    //   path: '/car/edit/:id?',
-    //   name: 'car-edit',
-    //   component: carEdit,
-    // },
+    {
+      path: '/toy',
+      name: 'toy-app',
+      component: toyApp,
+    },
+    {
+      path: '/toy/:id',
+      name: 'toy-details',
+      component: toyDetails,
+    },
+    {
+      path: '/toy/edit/:id?',
+      name: 'toy-edit',
+      component: toyEdit,
+    },
     {
       path: '/about',
       name: 'about',
