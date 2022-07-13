@@ -1,9 +1,10 @@
 <template>
   <section class="app-container container">
     <app-header />
-    <chat-app/>
+    <!-- <chat-app v-if="data" @onCloseModal ="data = null" /> -->
+    <chat-app />
     <router-view />
-    <!-- <app-footer /> -->
+    <app-footer />
   </section>
 </template>
 

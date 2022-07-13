@@ -1,5 +1,5 @@
-<template >
-  <section class="chat" v-if="toggleModal">
+<template > 
+  <section class="chat" v-if="toggleModal" @keypress.esc="onCloseModal">
     <input
       v-model="filterBy.userInput"
       type="text"
@@ -20,7 +20,11 @@ export default {
       isOpen:false
     }
   },
-  methods: {},
+  methods: {
+    onCloseModal(e){
+      console.log(e);
+    }
+  },
   computed:{
     toggleModal(){
         return this.$store.getters.modalStatus

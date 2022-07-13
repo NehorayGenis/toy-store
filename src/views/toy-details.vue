@@ -5,7 +5,10 @@
       <p><span class="fw-bold">name:</span> {{ toy.name }}</p>
       <p><span class="fw-bold">price:</span> {{ toy.price }}</p>
       <div v-for="review in toy.reviews">
-      <p><span class="fw-bold">reviews:</span> {{ review }}</p>
+      <p><span class="fw-bold">review:</span> {{ review }}</p>
+      </div>
+      <div v-for="label in toy.labels">
+      <p><span class="fw-bold">label:</span> {{ label }}</p>
       </div>
     </article>
     <button @click="goBack" class="btn btn-primary">go back</button>

@@ -1,0 +1,9 @@
+div .el-select .el-input.is-focus .el-input__wrapper {
+    box-shadow: 0 0 0 1px #40ff59 inset!important;
+}
+div .el-input__wrapper {
+    background-color: rgba(255, 255, 255, 0);
+}
+li.el-select-dropdown__item{
+    color: red;
+}

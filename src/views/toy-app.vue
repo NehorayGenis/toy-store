@@ -1,6 +1,6 @@
 <template>
   <section class="car-app container flex flex-col gap-1">
-    <button @click="goToEdit" class="btn btn-secondary">Add a new toy</button>
+    <button @click="goToEdit" class="btn btn-secondary" >Add a new toy</button>
     <toy-filter @setFilter="setFilter" />
     <toy-list @removeToy="removeToy" v-if="toys" :toys="toysToShow" />
     <color-picker/>

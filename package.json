@@ -7,8 +7,13 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.72",
     "axios": "^0.27.2",
+    "chart.js": "^3.8.0",
+    "element-plus": "^2.2.9",
+    "sass": "^1.53.0",
     "vue": "^3.2.37",
+    "vue-chart-3": "^3.1.8",
     "vue-router": "^4.1.2",
     "vuex": "^4.0.2"
   },
